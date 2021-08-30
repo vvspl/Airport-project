@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <div id="root"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Airport project</title>
+  </head>
+  <body>
+    <h1>Search flight</h1>
+    <form>
+      <div class="square"><i class="fas fa-search"></i></div>
+      <input class="input" type="text" value="" placeholder="Airline, destination or flight" />
+      <button class="search_btn"><span class="btn-text">search</span></button>
+    </form>
+    <div class="container">
+      <div class="tableHeader">
+        <div class="departures">
+          <i class="fas fa-plane-departure"></i>
+          <span class="departuresTxt">departures</span>
+        </div>
+        <div class="arrivals">
+          <i class="fas fa-plane-arrival"></i>
+          <span class="arrivalsTxt">arrivals</span>
+        </div>
+      </div>
+      <div class="partition"></div>
+      <table class='table'>
+        <tr class='tableRow'>
+            <td class='terminal'>Terminal</td>
+            <td class='localTime'>Local Time</td>
+            <td class='destination'>Destination</td>
+            <td class='status'>Status</td>
+            <td class='airline'>Airline</td>
+            <td class='flight'>Flight</td>
+            <td class='details'></td>
+        </tr>
+    </table>
+    <table id="root">
+    </table>
+    </div>
+  </body>
 </html>
