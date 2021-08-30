@@ -8,8 +8,7 @@ const Table = ({ flightsData, getFlightsData }) => {
     getFlightsData();
   }, []);
 
-  // const array = flightsData.body.arrival;
-  console.log('flightsData: ', flightsData.flights);
+  console.log('flightsData: ', flightsData.body.arrival);
  
   return (
     <tbody>
@@ -29,7 +28,6 @@ const Table = ({ flightsData, getFlightsData }) => {
 };
 
 const mapState = state => {
-  console.log(state);
   return {
     flightsData: flightsDataSelector(state),
   };
