@@ -29,17 +29,6 @@ h1 {
   font-size: 30px;
   color: #bebebe;
 }
-.fa-plane-departure,
-.fa-plane-arrival{
-    font-size: 30px;
-    margin-left: 150px;
-}
-.fa-plane-departure{
-    color: #ffffff; 
-}
-.fa-plane-arrival{
-    color: rgb(83, 181, 233);
-}
 
 .input {
   border: none;
@@ -80,46 +69,12 @@ form {
 .tableHeader {
   height: 60px;
 }
-.departures,
-.arrivals {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  width: 54%;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
-}
-.departures {
-  position: relative;
-  z-index: 1;
-  background-color: #53b5e9;
-}
-.arrivals {
-  position: relative;
-  top: -60px;
-  z-index: 0;
-  margin-left: 46%;
-  background-color: #ffffff;
-}
-.departures,
-.arrivals,
+
 .search_btn:hover
 {
 cursor: pointer;
 }
-.arrivalsTxt,
-.departuresTxt {
-  font-size: 22px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-left: 30px;
-}
-.arrivalsTxt {
-  color: #53b5e9;
-}
-.departuresTxt {
-  color: white;
-}
+
 .partition {
   width: 100%;
   height: 60px;
@@ -129,10 +84,43 @@ cursor: pointer;
   width: 100%;
   border-collapse: collapse;
 }
-.tableRow{
+.tableRowEven{
   background-color: #ffffff;
+}
+tr:hover{
+box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);//-5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
 }
 td{
   width: 10%;
   padding: 20px;
+}
+.terminal{
+  width: 5%;
+  padding: 5px;
+}
+.terminalSquare{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin:auto;
+  border: 2px solid #53b5e9;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #53b5e9;
+  font-weight: 700;
+}
+img{
+  height:20px;
+}
+.flightDetailsLink{
+  color: #53b5e9;
+  font-weight: 700;
+  text-decoration: underline;
+  visibility:hidden;
+  cursor: pointer;
+}
+tr:hover .flightDetailsLink{
+  visibility: visible;
 }

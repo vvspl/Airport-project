@@ -1,9 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import flightsReducer from './FlightsData/flightsData.reducers';
+import flightsDataReducer, {tabSelectionReducer} from './FlightsData/flightsData.reducers';
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
-  flightsData: flightsReducer,
+  flightsData: flightsDataReducer,
+  arrivalTabSelected: tabSelectionReducer,
 });
 
 const logger = store => next => action => {

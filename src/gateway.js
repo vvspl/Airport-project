@@ -1,4 +1,6 @@
-const baseUrl = 'https://api.iev.aero/api/flights/01-09-2021';
+import moment from 'moment';
+
+const baseUrl = 'https://api.iev.aero/api/flights/'+ moment(new Date()).format('DD-MM-YY');
 
 export const fetchFlightsData = () =>
   fetch(baseUrl).then(response => {

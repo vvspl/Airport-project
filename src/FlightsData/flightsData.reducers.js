@@ -1,10 +1,13 @@
-import { FLIGHTS_DATA_RECEIVED } from './flightsData.actions';
+import { FLIGHTS_DATA_RECEIVED, ARRIVAL_TAB_SELECTED } from './flightsData.actions';
 
-const initialData = {
-  flights: {},
+const initialFlightData = {
+  flights: [],
 };
 
-const flightsDataReducer = (state = initialData, action) => {
+const initialTabData = true;
+
+const flightsDataReducer = (state = initialFlightData, action) => {
+
   switch (action.type) {
 
     case FLIGHTS_DATA_RECEIVED: {
@@ -14,6 +17,18 @@ const flightsDataReducer = (state = initialData, action) => {
       };
     }
 
+    default:
+      return state;
+  }
+};
+
+export const tabSelectionReducer = (state = initialTabData, action) => {
+
+  switch (action.type) {
+
+    case ARRIVAL_TAB_SELECTED: {
+      return action.payload;
+    }
     default:
       return state;
   }

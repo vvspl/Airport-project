@@ -1,0 +1,38 @@
+.departures {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 54%;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  &__unselected{
+    z-index: 0;
+    background-color: #53b5e9;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.departuresTxt {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-left: 30px;
+  color: #53b5e9;
+  &__unselected{
+    color: #ffffff;
+  }
+}
+
+.fa-plane-departure {
+  font-size: 30px;
+  margin-left: 150px;
+  color: #53b5e9;
+  &__unselected{
+      color: #ffffff;
+  }
+}
