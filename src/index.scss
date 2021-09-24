@@ -15,6 +15,10 @@ h1 {
   font-weight: 300;
   text-transform: uppercase;
 }
+h2 {
+  text-align: center;
+  font-weight: 300;
+}
 
 .square {
   display: flex;
@@ -36,9 +40,12 @@ h1 {
   width: 700px;
   font-size: 30px;
   outline: none;
-}
-.input::-webkit-input-placeholder {
-  color: #bebebe;
+  &::-webkit-input-placeholder {
+    color: #bebebe;
+  }
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
 }
 
 form {
@@ -70,9 +77,8 @@ form {
   height: 60px;
 }
 
-.search_btn:hover
-{
-cursor: pointer;
+.search_btn:hover {
+  cursor: pointer;
 }
 
 .partition {
@@ -80,47 +86,47 @@ cursor: pointer;
   height: 60px;
   background-color: #ffffff;
 }
-.table{
+.table {
   width: 100%;
   border-collapse: collapse;
 }
-.tableRowEven{
+.tableRowEven {
   background-color: #ffffff;
 }
-tr:hover{
-box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);//-5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+tr:hover {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2); //-5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
 }
-td{
+td {
   width: 10%;
   padding: 20px;
 }
-.terminal{
+.terminal {
   width: 5%;
   padding: 5px;
 }
-.terminalSquare{
+.terminalSquare {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  margin:auto;
+  margin: auto;
   border: 2px solid #53b5e9;
   border-radius: 20px;
   background-color: #ffffff;
   color: #53b5e9;
   font-weight: 700;
 }
-img{
-  height:20px;
+img {
+  height: 20px;
 }
-.flightDetailsLink{
+.flightDetailsLink {
   color: #53b5e9;
   font-weight: 700;
   text-decoration: underline;
-  visibility:hidden;
+  visibility: hidden;
   cursor: pointer;
 }
-tr:hover .flightDetailsLink{
+tr:hover .flightDetailsLink {
   visibility: visible;
 }

@@ -1,4 +1,4 @@
-import { FLIGHTS_DATA_RECEIVED, ARRIVAL_TAB_SELECTED } from './flightsData.actions';
+import { FLIGHTS_DATA_RECEIVED, ARRIVAL_TAB_SELECTED, SEARCH_STRING } from './flightsData.actions';
 
 const initialFlightData = {
   flights: [],
@@ -22,6 +22,8 @@ const flightsDataReducer = (state = initialFlightData, action) => {
   }
 };
 
+const initialSearchData = '';
+
 export const tabSelectionReducer = (state = initialTabData, action) => {
 
   switch (action.type) {
@@ -33,5 +35,18 @@ export const tabSelectionReducer = (state = initialTabData, action) => {
       return state;
   }
 };
+
+export const searchReducer = (state = initialSearchData, action) => {
+
+  switch (action.type) {
+
+    case SEARCH_STRING: {
+      return action.payload;
+    }
+    default:
+      return state;
+  }
+};
+
 
 export default flightsDataReducer;

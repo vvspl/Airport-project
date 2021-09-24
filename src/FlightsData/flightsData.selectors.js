@@ -5,3 +5,7 @@ export const flightsDataSelector = state => {
   export const tabSelector = state => {
     return state.arrivalTabSelected;
   };
+
+  export const searchString = state =>{
+    return state.searchedString;
+  }

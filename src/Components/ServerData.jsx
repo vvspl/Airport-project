@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as flightsActions from '../FlightsData/flightsData.actions';
+import {flightsDataReceived, searchFilter} from '../FlightsData/flightsData.actions';
 import { flightsDataSelector} from '../FlightsData/flightsData.selectors';
 import moment from 'moment';
+import store from '../store';
 
-const Table = ({arrivalSelected, flightsData, getFlightsData}) => {
+const ServerData = ({arrivalSelected, flightsData, getFlightsData, text, filterData}) => {
 
   useEffect(() => {
+    debugger;
     getFlightsData();
+    // if (text!=='') filterData();
+    // if (text!=='') store.dispatch(flightsDataReceived(searchFilter(text)));
+    // console.log('store: ', searchFilter(text))
   }, [arrivalSelected]);
+
+  debugger;
+  // if (text!==''){
+  //   store.dispatch(flightsDataReceived(searchFilter(text)));  // тут бесконечный цикл выходит обращения к поиску
+  // }
 
   return (
     <table>
@@ -61,6 +72,7 @@ const mapState = state => {
 
 const mapDispatch = {
   getFlightsData: flightsActions.getFlightsData,
+  // filterData: flightsActions.flightsDataReceived(flightsActions.searchFilter(text)),
 };
 
-export default connect(mapState, mapDispatch)(Table);
+export default connect(mapState, mapDispatch)(ServerData);

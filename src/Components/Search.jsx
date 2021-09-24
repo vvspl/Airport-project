@@ -1,21 +1,24 @@
 import React from 'react';
 import store from '../store';
+import { getFlightsData, flightsDataReceived, searchString, searchFilter } from '../FlightsData/flightsData.actions';
 
 const Search = () => {
-  const search = event => {
+
+  const handleSearch = event => {
     event.preventDefault();
-    const formData = Object.fromEntries(new FormData(event.target));
-    let searchResult = store
-      .getState()
-      .flightsData.flights.filter(
-        searchData =>
-          searchData['carrierID.IATA'] === formData.input.slice(0, 2) &&
-          searchData.fltNo === formData.input.slice(2),
-      );
+    const text = store.getState().searchedString;
+    if (text !== '') {
+      store.dispatch(flightsDataReceived(searchFilter(text)));
+    };
   };
 
+  const putSearchTxtToState = (event)=>{
+    if (event.target.value==='') store.dispatch(getFlightsData());
+    store.dispatch(searchString(String(event.target.value)));
+  }
+
   return (
-    <form className="searchForm" onSubmit={search}>
+    <form className="searchForm" onSubmit={handleSearch}>
       <div className="square">
         <i className="fas fa-search"></i>
       </div>
@@ -25,6 +28,7 @@ const Search = () => {
         type="text"
         defaultValue=""
         placeholder="Airline, destination or flight"
+        onChange={putSearchTxtToState}
       />
       <button className="search_btn">
         <span className="btn-text">search</span>

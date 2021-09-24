@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Departures from './Departures/Departures';
 import Arrivals from './Arrivals/Arrivals';
 import ServerData from './ServerData';
+import EmptySearch from './EmptySearch';
 import store from '../store';
-import {tabSelection} from '../FlightsData/flightsData.actions';
+import { tabSelection, flightsDataReceived, searchFilter } from '../FlightsData/flightsData.actions';
 
 const Table = () => {
   let [arrivalSelected, setArrivalSelected] = useState(true);
 
+  const text = store.getState().searchedString;
+
   const selectArrivalTab = () => {
     setArrivalSelected(true);
     store.dispatch(tabSelection(true));
+    // if (text!==''){
+    //   store.dispatch(flightsDataReceived(searchFilter(text)));
+    // }
   };
   const selectDepartureTab = () => {
     setArrivalSelected(false);
     store.dispatch(tabSelection(false));
+    // if (text!==''){
+    //   store.dispatch(flightsDataReceived(searchFilter(text)));
+    // }
   };
 
   return (
@@ -37,7 +47,8 @@ const Table = () => {
           </tr>
         </tbody>
       </table>
-      <ServerData arrivalSelected={arrivalSelected}/>
+        <ServerData arrivalSelected={arrivalSelected} text={text}/>
+          {/* <EmptySearch /> */}
     </div>
   );
 };

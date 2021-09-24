@@ -1,24 +1,23 @@
-import React, { useState, useDispatch } from 'react';
+import React from 'react';
 import './departures.scss';
-// import {tapArrivalTab} from '../../FlightsData/flightsData.reducers';
+import store from '../../store';
+import { flightsDataReceived, searchFilter} from '../../FlightsData/flightsData.actions';
+// import {Link} from 'react-router-dom';
 
-// import { connect } from 'react-redux';
-// import * as flightsActions from '../FlightsData/flightsData.actions';
-// import { tabSelector } from '../FlightsData/flightsData.selectors';
-
-// const Departures = (arrivalTabSelected, departureTabSelected) => {
 const Departures = ({selectDepartureTab, departureSelected}) => {
-  // const dispatch = useDispatch();
-
-  // let [departureSelected, setDepartureSelected] = useState(false);
 
   const showDepartureTab = () => {
-    // setDepartureSelected(true);
-    // dispatch(tapArrivalTab(false));
     selectDepartureTab();
+    debugger;
+    const text = store.getState().searchedString;
+    if (text !== '') {
+      store.dispatch(flightsDataReceived(searchFilter(text)));
+    };
+    debugger;
   };
 
   return (
+    // <Link to='/departures'>
     <div id='departure'
       className={
         departureSelected ? 'departures' : 'departures departures__unselected'
@@ -42,19 +41,8 @@ const Departures = ({selectDepartureTab, departureSelected}) => {
         departures
       </span>
     </div>
+    //  </Link>
   );
 };
-
-// const mapState = state => {
-//   return {
-//     arrivalTabSelected: tabSelector(state),
-//   };
-// };
-
-// const mapDispatch = {
-//   departureTabSelected: flightsActions.tabSelection(!departureSelected),
-// };
-
-// export default connect(mapState, mapDispatch)(Departures);
 
 export default Departures;

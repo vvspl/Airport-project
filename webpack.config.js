@@ -37,7 +37,8 @@ module.exports = (env, argv) => {
       extensions: [".js", ".jsx"]
     },
     devServer: {
-      hot: true
+      hot: true,
+      historyApiFallback: true,
     }
   };
 
