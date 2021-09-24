@@ -16,7 +16,7 @@ const ServerData = ({arrivalSelected, flightsData, getFlightsData, text, filterD
     // console.log('store: ', searchFilter(text))
   }, [arrivalSelected]);
 
-  debugger;
+  // debugger;
   // if (text!==''){
   //   store.dispatch(flightsDataReceived(searchFilter(text)));  // тут бесконечный цикл выходит обращения к поиску
   // }
