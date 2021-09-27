@@ -7,9 +7,7 @@ const initialFlightData = {
 const initialTabData = true;
 
 const flightsDataReducer = (state = initialFlightData, action) => {
-
   switch (action.type) {
-
     case FLIGHTS_DATA_RECEIVED: {
       return {
         ...state,
@@ -25,9 +23,7 @@ const flightsDataReducer = (state = initialFlightData, action) => {
 const initialSearchData = '';
 
 export const tabSelectionReducer = (state = initialTabData, action) => {
-
   switch (action.type) {
-
     case ARRIVAL_TAB_SELECTED: {
       return action.payload;
     }
@@ -37,9 +33,7 @@ export const tabSelectionReducer = (state = initialTabData, action) => {
 };
 
 export const searchReducer = (state = initialSearchData, action) => {
-
   switch (action.type) {
-
     case SEARCH_STRING: {
       return action.payload;
     }
@@ -47,6 +41,5 @@ export const searchReducer = (state = initialSearchData, action) => {
       return state;
   }
 };
-
 
 export default flightsDataReducer;

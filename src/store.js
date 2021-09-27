@@ -1,5 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import flightsDataReducer, {tabSelectionReducer, searchReducer} from './FlightsData/flightsData.reducers';
+import flightsDataReducer, {
+  tabSelectionReducer,
+  searchReducer,
+} from './FlightsData/flightsData.reducers';
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
@@ -14,7 +17,6 @@ const logger = store => next => action => {
   let result = next(action);
   console.log('next state', store.getState());
   console.groupEnd();
-  // debugger;
   return result;
 };
 

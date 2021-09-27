@@ -1,10 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import * as flightsActions from '../FlightsData/flightsData.actions';
-import {flightsDataReceived, searchFilter} from '../FlightsData/flightsData.actions';
 import { flightsDataSelector} from '../FlightsData/flightsData.selectors';
 import moment from 'moment';
-import store from '../store';
 
 const ServerData = ({arrivalSelected, flightsData, getFlightsData}) => {
 

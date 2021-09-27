@@ -3,16 +3,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Departures from './Departures/Departures';
 import Arrivals from './Arrivals/Arrivals';
 import ServerData from './ServerData';
-import EmptySearch from './EmptySearch';
 import store from '../store';
-import {
-  tabSelection,
-  flightsDataReceived,
-  searchFilter,
-} from '../FlightsData/flightsData.actions';
+import { tabSelection } from '../FlightsData/flightsData.actions';
 
-const Table = (data) => {    /// data
-
+const Table = () => {
   let [arrivalSelected, setArrivalSelected] = useState(true);
 
   const text = store.getState().searchedString;
@@ -58,8 +52,8 @@ const Table = (data) => {    /// data
               <td className="details"></td>
             </tr>
           </tbody>
-        </table> 
-        <ServerData arrivalSelected={arrivalSelected} />                            
+        </table>
+        <ServerData arrivalSelected={arrivalSelected} />
       </div>
     </BrowserRouter>
   );

@@ -8,7 +8,6 @@ import {
 } from '../FlightsData/flightsData.actions';
 
 const Search = () => {
-
   let input = null;
   const setInputRef = node => {
     input = node;
