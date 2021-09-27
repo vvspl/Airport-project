@@ -31,8 +31,8 @@ export const flightsDataReceived = (flightsData) => {
 export const getFlightsData = () => {
     return dispatch => {
       fetchFlightsData().then(flightsData => {
-        const a = store.getState().arrivalTabSelected;
-        debugger;
+        // const a = store.getState().arrivalTabSelected;
+        // debugger;
         if (store.getState().arrivalTabSelected) return dispatch(flightsDataReceived(flightsData.body.arrival));
         return dispatch(flightsDataReceived(flightsData.body.departure));
       }
@@ -48,6 +48,6 @@ export const getFlightsData = () => {
             searchData['carrierID.IATA'] === text.slice(0, 2) &&
             searchData.fltNo === text.slice(2),
         );
-        debugger;
+        // debugger;
         return searchResult;
   }
