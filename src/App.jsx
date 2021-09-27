@@ -6,11 +6,17 @@ import Table from './Components/Table';
 
 
 const App = () => {
+
+  const passData =(Data)=>{
+    alert(Data);
+    return Data;
+  }
+
   return (
     <Provider store={store}>
       <h1>Search flight</h1>
-      <Search/>
-      <Table />
+      <Search dat={passData}/>
+      <Table data={passData}/>
     </Provider>
   );
 };
