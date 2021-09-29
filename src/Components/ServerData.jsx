@@ -51,7 +51,6 @@ const ServerData = ({arrivalSelected, flightsData, getFlightsData}) => {
       ))}
     </tbody>
     </table>
-    {console.log('Длина массива: ',flightsData.length)}
     {flightsData.length===0 ? <h2>There is no any flights found</h2>:
     <></>}
     </>
