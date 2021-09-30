@@ -2,7 +2,6 @@ import React from 'react';
 import './departures.scss';
 import store from '../../store';
 import { flightsDataReceived, searchFilter } from '../../FlightsData/flightsData.actions';
-import { Link } from 'react-router-dom';
 
 const Departures = ({ selectDepartureTab, departureSelected }) => {
   const showDepartureTab = () => {
@@ -14,7 +13,6 @@ const Departures = ({ selectDepartureTab, departureSelected }) => {
   };
 
   return (
-    <Link to="/departures" style={{ textDecoration: 'none' }}>
       <div
         id="departure"
         className={departureSelected ? 'departures' : 'departures departures__unselected'}
@@ -35,7 +33,6 @@ const Departures = ({ selectDepartureTab, departureSelected }) => {
           departures
         </span>
       </div>
-    </Link>
   );
 };
 

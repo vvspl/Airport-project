@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import Departures from './Departures/Departures';
 import Arrivals from './Arrivals/Arrivals';
 import ServerData from './ServerData';
@@ -21,23 +20,13 @@ const Table = () => {
   };
 
   return (
-    <BrowserRouter>
       <div className="container">
         <div className="tableHeader">
-          <Route exact path="/departures">
             <Departures
               selectDepartureTab={selectDepartureTab}
               departureSelected={!arrivalSelected}
             />
             <Arrivals selectArrivalTab={selectArrivalTab} arrivalSelected={arrivalSelected} />
-          </Route>
-          <Route exact path={['/', '/arrivals']}>
-            <Departures
-              selectDepartureTab={selectDepartureTab}
-              departureSelected={!arrivalSelected}
-            />
-            <Arrivals selectArrivalTab={selectArrivalTab} arrivalSelected={arrivalSelected} />
-          </Route>
         </div>
         <div className="partition"></div>
         <table className="table">
@@ -55,7 +44,6 @@ const Table = () => {
         </table>
         <ServerData arrivalSelected={arrivalSelected} />
       </div>
-    </BrowserRouter>
   );
 };
 export default Table;

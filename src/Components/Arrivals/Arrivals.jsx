@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './arrivals.scss';
 
 const Arrivals = ({ selectArrivalTab, arrivalSelected }) => {
   const showArrivalTab = () => {
     selectArrivalTab();
   };
+
   return (
-    <Link to="/arrivals" style={{ textDecoration: 'none' }}>
       <div
         id="arrival"
         className={arrivalSelected ? 'arrivals' : 'arrivals arrivals__unselected'}
@@ -24,7 +23,6 @@ const Arrivals = ({ selectArrivalTab, arrivalSelected }) => {
           arrivals
         </span>
       </div>
-    </Link>
   );
 };
 export default Arrivals;
